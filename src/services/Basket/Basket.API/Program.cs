@@ -1,17 +1,13 @@
-using BuildingBlocks.Behaviors;
 using BuildingBlocks.Exceptions.Handler;
 using Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.DependencyInjection;
-using System.Linq.Expressions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 
-//Application Services
+// Application Services
 var assembly = typeof(Program).Assembly;
 builder.Services.AddCarter();
 builder.Services.AddMediatR(config =>
@@ -38,7 +34,6 @@ builder.Services.AddStackExchangeRedisCache(options =>
 
 
 //Grpc Services
-
 builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
 {
     options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
@@ -70,6 +65,5 @@ app.UseHealthChecks("/health",
     {
         ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
     });
-
 
 app.Run();
