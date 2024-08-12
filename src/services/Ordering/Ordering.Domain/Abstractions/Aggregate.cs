@@ -12,11 +12,11 @@
 
         public IDomainEvent[] ClearDomainEvents()
         {
-            IDomainEvent[] dequeuedEvent = _domainEvents.ToArray();
+            IDomainEvent[] dequeuedEvents = _domainEvents.ToArray();
 
             _domainEvents.Clear();
 
-            return dequeuedEvent;
+            return dequeuedEvents;
         }
     }
 }
