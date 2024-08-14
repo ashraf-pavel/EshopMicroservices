@@ -4,9 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FluentValidation;
 
-
-
-
 namespace BuildingBlocks.Exceptions.Handler
 {
     public class CustomExceptionHandler 
