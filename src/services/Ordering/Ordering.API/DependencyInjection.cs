@@ -29,7 +29,7 @@ namespace Ordering.API
                 {
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
                 }
-                );
+                ); 
 
             return app;
         }
