@@ -7,6 +7,7 @@
     <ProjectGuid>47191071-55a5-42c1-b0df-8a527fb07a34</ProjectGuid>
     <DockerLaunchAction>None</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
+    <DockerServiceName>shopping.web</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
